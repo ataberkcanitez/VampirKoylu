@@ -41,3 +41,10 @@ app-example
 # generated native folders
 /ios
 /android
+
+# Important Files to Ignore
+workflow.md
+.env*
+security.md
+secrets.json
+firebase.ts

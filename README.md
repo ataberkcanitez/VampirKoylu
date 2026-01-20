@@ -1,50 +1,35 @@
-# Welcome to your Expo app 👋
+# Vampir Köylü 🐺🏘️
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Vampir Köylü, popüler sosyal çıkarım oyununu (Vampir/Köylü, Kurt Adam, Mafia) dijital ortama taşıyan, React Native ve Expo ile geliştirilmiş mobil bir uygulamadır. Arkadaşlarınızla fiziksel olarak bir aradayken oyunun yönetimini kolaylaştırmak ve tüm oylama/rol süreçlerini otomatize etmek için tasarlanmıştır.
 
-## Get started
+## ✨ Özellikler
 
-1. Install dependencies
+- **Tam Otomatik Gece Döngüsü**: Vampirlerin avlanması ve Doktorun kurtarma seansları.
+- **Gündüz Oylaması**: Şüphelileri belirlemek ve asmak için herkesin katıldığı açık oylama.
+- **Hassas Rol Gizliliği**: Roller varsayılan olarak gizlidir ve sadece oyuncu istediğinde (göz ikonu ile) görüntülenebilir.
+- **Gong Sistemi**: Oyun yöneticisi (Admin) için sesli ve titreşimli uyarılar.
+- **Canlı Durum Takibi**: Kimin hayatta olduğunu, kimin öldüğünü anlık olarak takip edin.
+- **Kazanma Koşulları**: Vampirlerin veya köylülerin zaferi otomatik olarak hesaplanır ve duyurulur.
 
-   ```bash
-   npm install
-   ```
+## 🎮 Nasıl Oynanır?
 
-2. Start the app
+1. **Oda Kur**: Bir oyuncu "Oyun Kur" butonuna basarak yeni bir oyun oluşturur ve verilen 6 haneli kodu arkadaşlarıyla paylaşır.
+2. **Katıl**: Diğer oyuncular "Oyuna Katıl" butonuna basarak kodu ve isimlerini girer.
+3. **Rol Dağılımı**: Yönetici (Admin), oyunu başlattığında roller otomatik olarak dağıtılır.
+4. **Döngü**: 
+   - Admin "Gong" çalarak geceyi başlatır.
+   - Vampirler kurban seçer, Doktor birini kurtarmaya çalışır.
+   - Sabah olduğunda ölen kişi duyurulur ve tartışma başlar.
+   - Gündüz oylamasıyla bir kişi elenir.
+5. **Son**: Vampirler köylü sayısına eşitlenirse vampirler, tüm vampirler elenirse köylüler kazanır!
 
-   ```bash
-   npx expo start
-   ```
+## 🛠️ Teknolojiler
 
-In the output, you'll find options to open the app in a
+- [Expo](https://expo.dev/) & [React Native](https://reactnative.dev/)
+- [Firebase Firestore](https://firebase.google.com/docs/firestore) (Gerçek zamanlı veritabanı)
+- [Expo Audio](https://docs.expo.dev/versions/latest/sdk/audio/) (Gong sesleri)
+- [Expo Haptics](https://docs.expo.dev/versions/latest/sdk/haptics/) (Titreşimler)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Keyifli oyunlar! 🐺🗡️🏘️

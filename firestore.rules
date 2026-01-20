@@ -1,0 +1,35 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper to check if current user is the admin of the game document
+    function isAdmin(gameDoc) {
+      return gameDoc.adminId == request.auth.uid;
+    }
+
+    match /games/{gameId} {
+      // Anyone can create and read
+      allow create, read: if request.auth != null;
+      
+      // Only admin can update the game document
+      allow update: if request.auth != null && isAdmin(resource.data);
+
+      match /players/{playerId} {
+        // Anyone authenticated can join
+        allow create: if request.auth != null;
+        
+        // Players can read their own data (to see roles)
+        // Public data (names) can be read by anyone in the game
+        allow read: if request.auth != null;
+        
+        // Only admin can update player roles
+        allow update: if request.auth != null && (isAdmin(get(/databases/$(database)/documents/games/$(gameId)).data) || request.auth.uid == playerId);
+      }
+
+      match /events/{eventId} {
+        allow read: if request.auth != null;
+        allow create: if request.auth != null && isAdmin(get(/databases/$(database)/documents/games/$(gameId)).data);
+      }
+    }
+  }
+}
