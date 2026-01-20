@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
+import { doc, getDoc, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
 import { useState } from 'react';
 import { KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -51,6 +51,9 @@ export default function JoinGameScreen() {
                     isAlive: true,
                     joinedAt: serverTimestamp(),
                 });
+            } else {
+                // If they exist, update their name just in case they changed it or fixed a typo
+                await updateDoc(playerRef, { name: displayName });
             }
 
             // Redirect based on game status
